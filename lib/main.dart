@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,20 +29,21 @@ class HomePage extends StatelessWidget {
           child: Center(
             child: Stack(
               children: [
-                Align(
-                  alignment: Alignment(-1,-1),
+                Positioned(
+                  top: 0,
+                  left: 0,
                   child: Container(
-                    width: MediaQuery.of(context).size.width / 8,
-                    height: MediaQuery.of(context).size.width / 8,
-                    color: Colors.red,
-                    child: Text("${MediaQuery.of(context).size.width /8}"),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment(-0.71,-0.9),
+                  width: (MediaQuery.of(context).size.width ~/ 8).toDouble(),
+                  height:  (MediaQuery.of(context).size.width ~/ 8).toDouble(),
+                  color: Colors.red,
+                  child: Text("${MediaQuery.of(context).size.width /8}"),
+                ),),
+                Positioned(
+                  top: (MediaQuery.of(context).size.width ~/ 8).toDouble(),
+                  left: (MediaQuery.of(context).size.width ~/ 8).toDouble(),
                   child: Container(
-                    width: MediaQuery.of(context).size.width / 8,
-                    height: MediaQuery.of(context).size.width / 8,
+                    width: (MediaQuery.of(context).size.width ~/ 8).toDouble(),
+                    height:  (MediaQuery.of(context).size.width ~/ 8).toDouble(),
                     color: Colors.blue,
                   ),
                 ),
@@ -56,7 +56,6 @@ class HomePage extends StatelessWidget {
   }
 }
 
-// -1 - 20
-// ? - 2.5
+// 450 - 20
+// 51 - 2.5 / 10
 
-// 20
