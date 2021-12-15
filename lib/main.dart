@@ -27,81 +27,36 @@ class HomePage extends StatelessWidget {
         child: Container(
           constraints: BoxConstraints.expand(),
           color: Colors.teal,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(
+          child: Center(
+            child: Stack(
+              children: [
+                Align(
+                  alignment: Alignment(-1,-1),
                   child: Container(
-                      constraints: BoxConstraints.expand(),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Expanded(
-                              child: Container(
-                                color: Colors.red,
-                                child: Center(child: Text("A")),
-                              )
-                          ),
-                          Expanded(
-                              child: Container(
-                                color: Colors.green,
-                                child: Center(child: Text("B")),
-                              )
-                          ),
-                          Expanded(
-                              child: Container(
-                                color: Colors.blueGrey,
-                                child: Center(child: Text("C")),
-                              )
-                          ),
-                          Expanded(
-                              child: Container(
-                                color: Colors.blue,
-                                child: Center(child: Text("D")),
-                              )
-                          )
-                        ],
-                      )
-                  )
-              ),
-              Expanded(
+                    width: MediaQuery.of(context).size.width / 8,
+                    height: MediaQuery.of(context).size.width / 8,
+                    color: Colors.red,
+                    child: Text("${MediaQuery.of(context).size.width /8}"),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment(-0.71,-0.9),
                   child: Container(
-                      color: Colors.grey,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Expanded(
-                              child: Container(
-                                color: Colors.red,
-                                child: Center(child: Text("A")),
-                              )
-                          ),
-                          Expanded(
-                              child: Container(
-                                color: Colors.green,
-                                child: Center(child: Text("B")),
-                              )
-                          ),
-                          Expanded(
-                              child: Container(
-                                color: Colors.blueGrey,
-                                child: Center(child: Text("C")),
-                              )
-                          ),
-                          Expanded(
-                              child: Container(
-                                color: Colors.blue,
-                                child: Center(child: Text("D")),
-                              )
-                          )
-                        ],
-                      )
-                  )
-              ),
-            ],
-          ),
+                    width: MediaQuery.of(context).size.width / 8,
+                    height: MediaQuery.of(context).size.width / 8,
+                    color: Colors.blue,
+                  ),
+                ),
+              ],
+            ),
+          )
         ),
       ),
     );
   }
 }
+
+// -1 - 20
+// ? - 2.5
+
+// 20
