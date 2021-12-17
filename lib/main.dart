@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,35 +22,94 @@ class HomePage extends StatelessWidget {
         title: Text("Home Page"),
       ),
       body: SafeArea(
-        child: Container(
-          constraints: BoxConstraints.expand(),
-          color: Colors.teal,
-          child: Center(
-            child: Stack(
+          child: Container(
+            constraints: BoxConstraints.expand(),
+            color: Colors.teal,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Positioned(
-                  top: 0,
-                  left: 0,
-                  child: Container(
-                  width: (MediaQuery.of(context).size.width ~/ 8).toDouble(),
-                  height:  (MediaQuery.of(context).size.width ~/ 8).toDouble(),
-                  color: Colors.red,
-                  child: Text("${MediaQuery.of(context).size.width /8}"),
-                ),),
-                Positioned(
-                  top: (MediaQuery.of(context).size.width ~/ 8).toDouble(),
-                  left: (MediaQuery.of(context).size.width ~/ 8).toDouble(),
-                  child: Container(
-                    width: (MediaQuery.of(context).size.width ~/ 8).toDouble(),
-                    height:  (MediaQuery.of(context).size.width ~/ 8).toDouble(),
-                    color: Colors.blue,
+                Container(
+                  height: MediaQuery.of(context).size.height / 2.5,
+                  width: double.infinity,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                      top: 0,
+                      left: 0,
+                      child: Container(
+                        alignment: Alignment.center,
+                        color: Colors.red,
+                        width: MediaQuery.of(context).size.width / 4.5,
+                        height: MediaQuery.of(context).size.width / 10,
+                        child: Text("1"),
+                      )),
+                      Positioned(
+                          top: MediaQuery.of(context).size.width / 10,
+                          left: MediaQuery.of(context).size.width / 4.5,
+                          child: Container(
+                            alignment: Alignment.center,
+                            color: Colors.red,
+                            width: MediaQuery.of(context).size.width / 4.5,
+                            height: MediaQuery.of(context).size.width / 10,
+                            child: Text("1"),
+                          )),
+                      Positioned(
+                          top: (MediaQuery.of(context).size.width / 10 * 2),
+                          left: (MediaQuery.of(context).size.width / 4.5) * 2,
+                          child: Container(
+                            alignment: Alignment.center,
+                            color: Colors.red,
+                            width: MediaQuery.of(context).size.width / 4.5,
+                            height: MediaQuery.of(context).size.width / 10,
+                            child: Text("1"),
+                          )),
+                      Positioned(
+                          top: (MediaQuery.of(context).size.width / 10 * 3),
+                          left: (MediaQuery.of(context).size.width / 4.5) * 3,
+                          child: Container(
+                            alignment: Alignment.center,
+                            color: Colors.red,
+                            width: MediaQuery.of(context).size.width / 4.5,
+                            height: MediaQuery.of(context).size.width / 10,
+                            child: Text("1"),
+                          )),
+                      Positioned(
+                          top: (MediaQuery.of(context).size.width / 10 * 4),
+                          left: (MediaQuery.of(context).size.width / 4.5) * 2,
+                          child: Container(
+                            alignment: Alignment.center,
+                            color: Colors.red,
+                            width: MediaQuery.of(context).size.width / 4.5,
+                            height: MediaQuery.of(context).size.width / 10,
+                            child: Text("1"),
+                          )),
+                      Positioned(
+                          top:(MediaQuery.of(context).size.width / 10 * 5),
+                          left: MediaQuery.of(context).size.width / 4.5,
+                          child: Container(
+                            alignment: Alignment.center,
+                            color: Colors.red,
+                            width: MediaQuery.of(context).size.width / 4.5,
+                            height: MediaQuery.of(context).size.width / 10,
+                            child: Text("1"),
+                          )),
+                      Positioned(
+                          top: (MediaQuery.of(context).size.width / 10 * 6),
+                          left: 0,
+                          child: Container(
+                            alignment: Alignment.center,
+                            color: Colors.red,
+                            width: MediaQuery.of(context).size.width / 4.5,
+                            height: MediaQuery.of(context).size.width / 10,
+                            child: Text("1"),
+                          )),
+                    ],
                   ),
-                ),
+                )
               ],
             ),
-          )
-        ),
-      ),
+      )),
     );
   }
 }
