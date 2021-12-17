@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,15 +29,27 @@ class HomePage extends StatelessWidget {
             child: Column(
               children: [
                 TextField(
-                  obscureText: false,
+                  textInputAction: TextInputAction.next,
                   keyboardType: TextInputType.number,
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.email),
                     hintText: "Input Number 1",
                     // disabledBorder: InputBorder.none,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(5))
                     )
+                  ),
+                ),
+                TextField(
+                  textInputAction: TextInputAction.done,
+                  keyboardType: TextInputType.number,
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                  decoration: InputDecoration(
+                      hintText: "Input Number 2",
+                      // disabledBorder: InputBorder.none,
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(5))
+                      )
                   ),
                 )
               ],
