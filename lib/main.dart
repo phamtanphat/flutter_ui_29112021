@@ -27,6 +27,7 @@ class HomePage extends StatelessWidget {
             padding: EdgeInsets.all(5),
             constraints: BoxConstraints.expand(),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 TextField(
                   textInputAction: TextInputAction.next,
@@ -40,6 +41,7 @@ class HomePage extends StatelessWidget {
                     )
                   ),
                 ),
+                SizedBox(height: 10),
                 TextField(
                   textInputAction: TextInputAction.done,
                   keyboardType: TextInputType.number,
@@ -51,6 +53,48 @@ class HomePage extends StatelessWidget {
                           borderRadius: BorderRadius.all(Radius.circular(5))
                       )
                   ),
+                ),
+                SizedBox(height: 10),
+                Center(
+                  child: Text(
+                      "Ket qua = 5" ,
+                      style: TextStyle(
+                          color: Colors.red ,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic
+                      )
+                  ),
+                ),
+                SizedBox(height: 50),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Center(
+                        child: ElevatedButton(onPressed: (){}, child: Text("+")),
+                      ),
+                    ),
+                    Expanded(
+                      child: Center(
+                        child: ElevatedButton(onPressed: (){}, child: Text("-")),
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(height: 50),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Center(
+                        child: ElevatedButton(onPressed: (){}, child: Text("*")),
+                      ),
+                    ),
+                    Expanded(
+                      child: Center(
+                        child: ElevatedButton(onPressed: (){}, child: Text("/")),
+                      ),
+                    )
+                  ],
                 )
               ],
             ),
