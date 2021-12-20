@@ -20,9 +20,16 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   final TextEditingController textController1 = TextEditingController();
+
   final TextEditingController textController2 = TextEditingController();
+
   double dataResult = double.infinity;
 
   @override
@@ -96,7 +103,9 @@ class HomePage extends StatelessWidget {
                           }
                           double number1 = double.parse(text1);
                           double number2 = double.parse(text2);
-                          dataResult = (number1 + number2);
+                          setState(() {
+                            dataResult = (number1 + number2);
+                          });
 
                         }, child: Text("+")),
                       ),
@@ -130,6 +139,9 @@ class HomePage extends StatelessWidget {
   }
 }
 
-// 450 - 20
-// 51 - 2.5 / 10
+
+
+
+
+
 
