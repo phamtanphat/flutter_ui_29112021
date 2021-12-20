@@ -112,7 +112,24 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Expanded(
                       child: Center(
-                        child: ElevatedButton(onPressed: (){}, child: Text("-")),
+                        child: ElevatedButton(onPressed: (){
+                          String text1 = textController1.text.toString();
+                          String text2 = textController2.text.toString();
+
+                          if (text1.isEmpty || text2.isEmpty){
+                            ScaffoldMessenger
+                                .of(context)
+                                .showSnackBar(
+                                SnackBar(content: Text("Ban chua nhap du thong tin"))
+                            );
+                            return;
+                          }
+                          double number1 = double.parse(text1);
+                          double number2 = double.parse(text2);
+                          setState(() {
+                            dataResult = (number1 - number2);
+                          });
+                        }, child: Text("-")),
                       ),
                     )
                   ],
@@ -122,12 +139,56 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Expanded(
                       child: Center(
-                        child: ElevatedButton(onPressed: (){}, child: Text("*")),
+                        child: ElevatedButton(onPressed: (){
+                          String text1 = textController1.text.toString();
+                          String text2 = textController2.text.toString();
+
+                          if (text1.isEmpty || text2.isEmpty){
+                            ScaffoldMessenger
+                                .of(context)
+                                .showSnackBar(
+                                SnackBar(content: Text("Ban chua nhap du thong tin"))
+                            );
+                            return;
+                          }
+                          double number1 = double.parse(text1);
+                          double number2 = double.parse(text2);
+                          setState(() {
+                            dataResult = (number1 * number2);
+                          });
+                        }, child: Text("*")),
                       ),
                     ),
                     Expanded(
                       child: Center(
-                        child: ElevatedButton(onPressed: (){}, child: Text("/")),
+                        child: ElevatedButton(onPressed: (){
+                          String text1 = textController1.text.toString();
+                          String text2 = textController2.text.toString();
+
+                          if (text1.isEmpty || text2.isEmpty){
+                            ScaffoldMessenger
+                                .of(context)
+                                .showSnackBar(
+                                SnackBar(content: Text("Ban chua nhap du thong tin"))
+                            );
+                            return;
+                          }
+                          double number1 = double.parse(text1);
+                          double number2 = double.parse(text2);
+
+                          if(number2 == 0){
+                            ScaffoldMessenger
+                                .of(context)
+                                .showSnackBar(
+                                SnackBar(content: Text("Khong chia cho so 0"))
+                            );
+                            return;
+                          }
+
+                          setState(() {
+                            dataResult = (number1 + number2);
+                          });
+                        }, child: Text("/")),
                       ),
                     )
                   ],
